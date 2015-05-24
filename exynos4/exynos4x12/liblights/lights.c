@@ -205,11 +205,11 @@ static int set_light_leds(struct light_state_t const *state)
 
     if (is_lit(&g_AttentionStore)) {
         activeState = &g_AttentionStore;
-        colorRGB = get_dimmed_color(activeState, 255);
+        colorRGB = get_dimmed_color(activeState, 200);
     } else {
         if (is_lit(&g_BatteryStore) && !is_lit(&g_NotificationStore)) {
             activeState = &g_BatteryStore;
-            colorRGB = get_dimmed_color(activeState, 255);
+            colorRGB = get_dimmed_color(activeState, 20);
         } else {
             activeState = &g_NotificationStore;
             colorRGB = get_dimmed_color(activeState, 200);
@@ -234,7 +234,6 @@ static int set_light_leds(struct light_state_t const *state)
     led.blue = colorRGB & 0xFF;
     snprintf(led.blink, MAX_WRITE_CMD, "0x%x %d %d", colorRGB, onMS, offMS);
     ALOGV("set_light_leds 0x%x %d %d", colorRGB, onMS, offMS);
-
     return write_leds(led);
 }
 
