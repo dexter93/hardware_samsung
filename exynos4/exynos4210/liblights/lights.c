@@ -52,6 +52,13 @@ void init_globals(void)
     pthread_mutex_init(&g_lock, NULL);
 }
 
+#ifdef LED_NOTIFICATION
+static struct led_state {
+    unsigned int enabled;
+    int delay_on, delay_off;
+} battery_red, battery_blue, notifications_red, notifications_blue;
+#endif // LED_NOTIFICATION
+
 static int
 write_int(char const* path, int value)
 {
