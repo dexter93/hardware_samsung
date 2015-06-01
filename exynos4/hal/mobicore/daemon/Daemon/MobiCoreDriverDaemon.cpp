@@ -1158,7 +1158,7 @@ int main(int argc, char *args[])
         // obtain a new process group */
         setsid();
         /* close all descriptors */
-        for (i = getdtablesize(); i >= 0; --i) {
+        for (i = sysconf(_SC_OPEN_MAX); i >= 0; --i) {
             close(i);
         }
         // STDIN, STDOUT and STDERR should all point to /dev/null */
