@@ -18,7 +18,7 @@
 /*
  * @file    swconvertor.c
  *
- * @brief   SEC_OMX specific define
+ * @brief   Exynos_OMX specific define
  *
  * @author  ShinWon Lee (shinwon.lee@samsung.com)
  *

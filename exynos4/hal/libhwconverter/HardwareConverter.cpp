@@ -15,7 +15,7 @@
  */
 
 #include <utils/Log.h>
-#include "SEC_OMX_Def.h"
+#include "Exynos_OMX_Def.h"
 #include "SecFimc.h"
 #include "HardwareConverter.h"
 
